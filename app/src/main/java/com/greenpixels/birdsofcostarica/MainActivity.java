@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.greenpixels.birdsofcostarica.utils.AlertUtils;
 
-
-public class MainActivity extends BirdsOfCostaRicaActivity {
+public class MainActivity extends BaseActivity {
 
 
     @Override
@@ -27,8 +25,8 @@ public class MainActivity extends BirdsOfCostaRicaActivity {
     {
         super.onResume();
 
-        AlertUtils.showErrorDialog("test", "test", this);
     }
+
 
 
 

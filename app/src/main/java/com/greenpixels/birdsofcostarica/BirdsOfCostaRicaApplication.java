@@ -6,6 +6,8 @@ import android.content.Context;
 import com.greenpixels.birdsofcostarica.utils.ForegroundUtils;
 import com.greenpixels.birdsofcostarica.utils.LogUtils;
 
+import timber.log.Timber;
+
 /**
  * Main App
  *
@@ -25,8 +27,9 @@ public class BirdsOfCostaRicaApplication extends Application {
     }
     public void init()
     {
-//        RequestManager.init(this);
+        //RequestManager.init(this);
         ForegroundUtils.init(this);
+        Timber.plant(new Timber.DebugTree());
 
     }
 
@@ -41,8 +44,6 @@ public class BirdsOfCostaRicaApplication extends Application {
     public static Application getApplication() {
         return instance;
     }
-
-
 
 
 }
