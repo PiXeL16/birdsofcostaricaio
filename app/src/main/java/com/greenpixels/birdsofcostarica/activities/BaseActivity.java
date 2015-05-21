@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica;
+package com.greenpixels.birdsofcostarica.activities;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.greenpixels.birdsofcostarica.IListener;
 import com.greenpixels.birdsofcostarica.utils.PlayServicesUtils;
 
 /**
@@ -16,7 +17,7 @@ import com.greenpixels.birdsofcostarica.utils.PlayServicesUtils;
  * @author PiXeL16
  * @date 5/6/15
  */
-public abstract class BaseActivity extends AppCompatActivity implements IListener{
+public abstract class BaseActivity extends AppCompatActivity implements IListener {
 
     public abstract void init();
 

@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica;
+package com.greenpixels.birdsofcostarica.activities;
 
 import android.os.Bundle;
 import android.support.annotation.AnimRes;

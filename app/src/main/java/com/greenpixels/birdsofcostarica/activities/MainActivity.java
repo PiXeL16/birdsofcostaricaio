@@ -1,8 +1,11 @@
-package com.greenpixels.birdsofcostarica;
+package com.greenpixels.birdsofcostarica.activities;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.greenpixels.birdsofcostarica.R;
+import com.greenpixels.birdsofcostarica.activities.BaseActivity;
 
 
 public class MainActivity extends BaseActivity {
