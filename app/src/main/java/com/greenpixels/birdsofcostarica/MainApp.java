@@ -47,6 +47,7 @@ public class MainApp extends Application {
         instance = this;
     }
 
+    @NonNull
     public static Context getContext() {
         return instance;
     }
@@ -56,6 +57,7 @@ public class MainApp extends Application {
         return (MainApp) context.getApplicationContext();
     }
 
+    @NonNull
     public static Application getApplication() {
         return instance;
     }
