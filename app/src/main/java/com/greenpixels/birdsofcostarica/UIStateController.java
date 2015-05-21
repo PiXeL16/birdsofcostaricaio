@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+/**
+ * Handles UI states
+ */
 public class UIStateController {
 
     private static final String STATE_CURRENT_UI_STATE = "STATE_CURRENT_UI_STATE";
