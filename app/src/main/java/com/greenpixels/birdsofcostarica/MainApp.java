@@ -2,9 +2,12 @@ package com.greenpixels.birdsofcostarica;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import com.greenpixels.birdsofcostarica.utils.ForegroundUtils;
 import com.greenpixels.birdsofcostarica.utils.LogUtils;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 import timber.log.Timber;
 
@@ -14,10 +17,13 @@ import timber.log.Timber;
  * @author PiXeL16
  * @date 5/6/15
  */
-public class BirdsOfCostaRicaApplication extends Application {
+public class MainApp extends Application {
 
-    private static BirdsOfCostaRicaApplication instance;
-    private static final String TAG = LogUtils.makeLogTag(BirdsOfCostaRicaApplication.class);
+    private static MainApp instance;
+    private static final String TAG = LogUtils.makeLogTag(MainApp.class);
+
+    // Monitors Memory Leaks
+    private RefWatcher refWatcher;
 
 
     @Override
@@ -25,15 +31,19 @@ public class BirdsOfCostaRicaApplication extends Application {
         super.onCreate();
         this.init();
     }
+
     public void init()
     {
         //RequestManager.init(this);
         ForegroundUtils.init(this);
+        //Leak Tracking
+        refWatcher = LeakCanary.install(this);
+        //Logging
         Timber.plant(new Timber.DebugTree());
-
     }
 
-    public BirdsOfCostaRicaApplication() {
+
+    public MainApp() {
         instance = this;
     }
 
@@ -41,8 +51,18 @@ public class BirdsOfCostaRicaApplication extends Application {
         return instance;
     }
 
+    @NonNull
+    public static MainApp get(@NonNull Context context) {
+        return (MainApp) context.getApplicationContext();
+    }
+
     public static Application getApplication() {
         return instance;
+    }
+
+    @NonNull
+    public RefWatcher refWatcher() {
+        return refWatcher;
     }
 
 
