@@ -18,20 +18,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void init() {
-
-    }
-
-
-    @Override
     public void onResume()
     {
         super.onResume();
-
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,14 +46,4 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-    @Override
-    public void addListeners() {
-
-    }
-
-    @Override
-    public void removeListeners() {
-
-    }
 }

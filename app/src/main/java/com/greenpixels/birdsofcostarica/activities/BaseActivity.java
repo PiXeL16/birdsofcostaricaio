@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.greenpixels.birdsofcostarica.IListener;
+import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.utils.PlayServicesUtils;
+import com.hannesdorfmann.mosby.MosbyActivity;
 
 /**
  * Base Activity that other activities should extend
@@ -17,9 +19,7 @@ import com.greenpixels.birdsofcostarica.utils.PlayServicesUtils;
  * @author PiXeL16
  * @date 5/6/15
  */
-public abstract class BaseActivity extends AppCompatActivity implements IListener {
-
-    public abstract void init();
+public abstract class BaseActivity extends MosbyActivity {
 
     @Nullable
     private Toolbar _toolbar;
@@ -43,11 +43,11 @@ public abstract class BaseActivity extends AppCompatActivity implements IListene
     }
 
     protected void setupToolbar() {
-//        _toolbar = getView(R.id.toolbar);
-//
-//        if (_toolbar != null) {
-//            setSupportActionBar(_toolbar);
-//        }
+        _toolbar = getView(R.id.toolbar);
+
+        if (_toolbar != null) {
+            setSupportActionBar(_toolbar);
+        }
     }
 
 

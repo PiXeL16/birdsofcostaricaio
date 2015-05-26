@@ -7,6 +7,8 @@
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#727272</color>
     <color name="divider">#B6B6B6</color>
+    <color name="toolbar_icon">#B6B6B6</color>
+    <color name="toolbar_text">#B6B6B6</color>
 
     <color name="bg_main_sample_item_pressed">#ff4c90e1</color>
     <color name="bg_main_sample_item_focused">#ff3493e1</color>
