@@ -22,6 +22,15 @@ public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
     public void loadBirds()
     {
 
+        if(isViewAttached())
+        {
+            getView().showLoading(false);
+        }
+
+
+        getView().setData(null);
+        getView().showContent();
+
 
     }
 
@@ -29,9 +38,11 @@ public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
     public void detachView(boolean retainInstance) {
         super.detachView(retainInstance);
 
-        if (!retainInstance) {
+//        if (!retainInstance) {
             BusProvider.getInstance().unregister(this);
-        }
+//        }
+
+
     }
 
 

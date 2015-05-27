@@ -51,14 +51,16 @@ dependencies {
     compile 'com.hannesdorfmann.mosby:retrofit:1.1.0'
     compile 'com.hannesdorfmann.mosby:viewstate:1.1.0'
 
-    //Parcelable
-    compile 'com.hannesdorfmann.parcelableplease:annotation:1.0.1'
-    apt 'com.hannesdorfmann.parcelableplease:processor:1.0.1'
+
 
     //Annotations
     apt 'com.hannesdorfmann.annotatedadapter:processor:1.0.0'
     compile 'com.hannesdorfmann.annotatedadapter:annotation:1.0.0'
     compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.0.0'
+
+    //Parcelable
+    compile 'com.hannesdorfmann.parcelableplease:annotation:1.0.1'
+    apt 'com.hannesdorfmann.parcelableplease:processor:1.0.1'
 
     //Instance State
     apt 'frankiesardo:icepick-processor:3.0.2'
@@ -71,16 +73,17 @@ dependencies {
     compile 'com.facebook.stetho:stetho:1.1.1'
     compile 'com.facebook.stetho:stetho-okhttp:1.1.1'
 
-//    //Inyection
-//    compile 'com.google.dagger:dagger:2.0'
-//    apt 'com.google.dagger:dagger-compiler:2.0'
+    //Inyection
+    compile 'com.google.dagger:dagger:2.0'
+    apt 'com.google.dagger:dagger-compiler:2.0'
 //
 //    compile 'javax.inject:javax.inject:1'
 //    compile 'javax.annotation:javax.annotation-api:1.2'
 
     //Data
     compile 'com.pushtorefresh:bamboostorage:1.4.0'
-    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 
     //Testing
 //    compile 'junit:junit:4.12'
