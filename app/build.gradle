@@ -64,9 +64,12 @@ dependencies {
     apt 'frankiesardo:icepick-processor:3.0.2'
     apt 'com.hannesdorfmann.fragmentargs:processor:2.1.0'
 
-
     //RX
     compile 'io.reactivex:rxandroid:0.24.0'
+
+    //Remote Debugging
+    compile 'com.facebook.stetho:stetho:1.1.1'
+    compile 'com.facebook.stetho:stetho-okhttp:1.1.1'
 
 //    //Inyection
 //    compile 'com.google.dagger:dagger:2.0'

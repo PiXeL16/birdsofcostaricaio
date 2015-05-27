@@ -98,26 +98,30 @@
     <orderEntry type="library" exported="" name="sqliteassethelper-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="okhttp-urlconnection-2.3.0" level="project" />
     <orderEntry type="library" exported="" name="timber-3.1.0" level="project" />
+    <orderEntry type="library" exported="" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.1.1" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-analyzer-1.3.1" level="project" />
     <orderEntry type="library" exported="" name="floatingactionbutton-1.3.0" level="project" />
     <orderEntry type="library" exported="" name="library-1.0.9" level="project" />
+    <orderEntry type="library" exported="" name="stetho-okhttp-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-watcher-1.3.1" level="project" />
-    <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
+    <orderEntry type="library" exported="" name="stetho-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="mvp-common-1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="butterknife-6.1.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-2.3.0" level="project" />
-    <orderEntry type="library" exported="" name="otto-1.3.7" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-6.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-recyclerview-1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="otto-1.3.7" level="project" />
     <orderEntry type="library" exported="" name="haha-1.3" level="project" />
-    <orderEntry type="library" exported="" name="icepick-3.0.2" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="icepick-3.0.2" level="project" />
     <orderEntry type="library" exported="" name="annotation-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="bamboostorage-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="annotation-1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="commons-cli-1.2" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-android-1.3.1" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />

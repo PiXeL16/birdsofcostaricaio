@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.facebook.stetho.Stetho;
 import com.greenpixels.birdsofcostarica.utils.ForegroundUtils;
 import com.greenpixels.birdsofcostarica.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
@@ -40,6 +41,15 @@ public class MainApp extends Application {
         refWatcher = LeakCanary.install(this);
         //Logging
         Timber.plant(new Timber.DebugTree());
+
+        //Remote Debugging
+        Stetho.initialize(
+                Stetho.newInitializerBuilder(this)
+                        .enableDumpapp(
+                                Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(
+                                Stetho.defaultInspectorModulesProvider(this))
+                        .build());
     }
 
 

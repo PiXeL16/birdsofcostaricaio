@@ -47,12 +47,11 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
     }
 
 
-
     @Override
     protected String getErrorMessage(Throwable throwable, boolean pullToRefresh) {
 
         return this.getString(R.string.general_error_message);
-        
+
     }
 
     @Override
@@ -66,7 +65,6 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
     @Override
     public void setData(List<Bird> data) {
-
         _adapter.setBirds(data);
         _adapter.notifyDataSetChanged();
     }
