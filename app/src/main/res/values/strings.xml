@@ -3,5 +3,6 @@
 
     <string name="app_name">Birds Of Costa Rica</string>
     <string name="accept">Ok</string>
+    <string name="general_error_message">An unknown error has occurred</string>
 
 </resources>
