@@ -2,7 +2,6 @@
 <resources>
     <!-- Thanks http://materialpalette.com -->
 
-
     <color name="primary">#4CAF50</color>
     <color name="primary_dark">#388E3C</color>
     <color name="primary_medium">#9CCC65</color>
@@ -13,7 +12,6 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
 
-
-
+    <color name="fastScrollBarHandleColor">#727272</color>
 
 </resources>

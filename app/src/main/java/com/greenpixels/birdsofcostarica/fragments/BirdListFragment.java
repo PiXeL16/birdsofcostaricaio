@@ -22,6 +22,7 @@ import com.hannesdorfmann.mosby.mvp.lce.MvpLceFragment;
 import java.util.List;
 
 import butterknife.InjectView;
+import xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller;
 
 /**
  * Frament to show the main list of birds
@@ -33,6 +34,7 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
 
     @InjectView(R.id.recyclerView) RecyclerView _recyclerView;
+    @InjectView(R.id.fast_scroller) VerticalRecyclerViewFastScroller _verticalFastScroller;
 
     BirdsListAdapter adapter;
 
@@ -61,6 +63,10 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
         _recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         _recyclerView.setAdapter(adapter);
+
+        _verticalFastScroller.setRecyclerView(_recyclerView);
+
+        _recyclerView.setOnScrollListener(_verticalFastScroller.getOnScrollListener());
 
         loadData(false);
     }
