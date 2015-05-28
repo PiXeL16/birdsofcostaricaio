@@ -3,10 +3,13 @@ package com.greenpixels.birdsofcostarica;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
+import com.greenpixels.birdsofcostarica.inyection.components.AppComponent;
+import com.greenpixels.birdsofcostarica.inyection.components.DaggerAppComponent;
+import com.greenpixels.birdsofcostarica.inyection.modules.AppModule;
 import com.greenpixels.birdsofcostarica.utils.ForegroundUtils;
-import com.greenpixels.birdsofcostarica.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -20,11 +23,14 @@ import timber.log.Timber;
  */
 public class MainApp extends Application {
 
-    private static MainApp instance;
-    private static final String TAG = LogUtils.makeLogTag(MainApp.class);
-
     // Monitors Memory Leaks
     private RefWatcher refWatcher;
+
+    @Nullable
+    private volatile AppComponent appComponent;
+
+
+    private static MainApp instance;
 
 
     @Override
@@ -50,6 +56,7 @@ public class MainApp extends Application {
                         .enableWebKitInspector(
                                 Stetho.defaultInspectorModulesProvider(this))
                         .build());
+
     }
 
 
@@ -68,8 +75,26 @@ public class MainApp extends Application {
     }
 
     @NonNull
-    public static Application getApplication() {
-        return instance;
+    public AppComponent appComponent() {
+        if (appComponent == null) {
+            synchronized (MainApp.class) {
+                if (appComponent == null) {
+                    appComponent = createAppComponent();
+                }
+            }
+        }
+
+        //noinspection ConstantConditions
+        return appComponent;
+    }
+
+    @NonNull
+    private AppComponent createAppComponent() {
+        return DaggerAppComponent
+                .builder()
+                .appModule(new AppModule(this))
+                .build();
+
     }
 
     @NonNull

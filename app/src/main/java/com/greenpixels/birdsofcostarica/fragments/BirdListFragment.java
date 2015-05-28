@@ -7,8 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.greenpixels.birdsofcostarica.MainApp;
 import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.adapters.BirdsListAdapter;
+import com.greenpixels.birdsofcostarica.inyection.components.AppComponent;
+import com.greenpixels.birdsofcostarica.inyection.components.BirdListFragmentComponent;
+import com.greenpixels.birdsofcostarica.inyection.components.DaggerBirdListFragmentComponent;
+import com.greenpixels.birdsofcostarica.inyection.modules.DBModule;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.greenpixels.birdsofcostarica.presenters.BirdsPresenter;
 import com.greenpixels.birdsofcostarica.views.BirdsView;
@@ -29,19 +34,33 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
     @InjectView(R.id.recyclerView) RecyclerView _recyclerView;
 
-    private BirdsListAdapter _adapter;
+    BirdsListAdapter adapter;
+
+    BirdListFragmentComponent birdListFragmentComponent;
+
+    @Override protected void injectDependencies() {
+
+        AppComponent appComponent = MainApp.get(this.getActivity()).appComponent();
+
+        birdListFragmentComponent = DaggerBirdListFragmentComponent
+                .builder()
+                .appComponent(appComponent)
+                .dBModule(new DBModule())
+                .build();
+
+        birdListFragmentComponent.inject(this);
+
+    }
 
 
     @Override public void onViewCreated(View view, @Nullable Bundle savedInstance) {
         super.onViewCreated(view, savedInstance);
 
-
-
         // Setup recycler view
-        _adapter = new BirdsListAdapter(getActivity());
+        adapter = birdListFragmentComponent.adapter();
 
         _recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        _recyclerView.setAdapter(_adapter);
+        _recyclerView.setAdapter(adapter);
 
         loadData(false);
     }
@@ -56,7 +75,7 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
     @Override
     public BirdsPresenter createPresenter() {
-       return new BirdsPresenter();
+       return birdListFragmentComponent.presenter();
     }
 
     @Override protected int getLayoutRes() {
@@ -65,8 +84,8 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
 
     @Override
     public void setData(List<Bird> data) {
-        _adapter.setBirds(data);
-        _adapter.notifyDataSetChanged();
+        adapter.setBirds(data);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

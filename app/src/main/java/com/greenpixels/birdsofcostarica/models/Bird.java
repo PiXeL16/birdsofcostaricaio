@@ -8,10 +8,12 @@ import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 
 /**
  * Bird entity
- *
+ * TODO: Refactor entity, currently is a direct map from table
  * @author PiXeL16
  * @date 5/26/15
  */
+
+
 @ParcelablePlease
 public class Bird implements Parcelable {
 
@@ -45,6 +47,37 @@ public class Bird implements Parcelable {
     String _territorySpanish;
 
     public Bird() {
+    }
+
+    public Bird(long id, String created, String modified, String description, String englishName, String spanishName, String scientificName, String status, String thumbnailURL, int minAltitud, int maxAltitud, int size, String descriptionYear, String pastScientificNames, String seasonalitySpanish, String diagnosticDescriptionSpanish, String relationshipsSpanish, String distributionCostaRicaSpanish, String distributionOutsideCostaRicaSpanish, String nestSpanish, String habitasSpanish, String feedingHabitsSpanish, String conservationAreasDistributionSpanish, String behaviorSpanish, String mythsSpanish, String conservationStatus, String authorTax, String territorySpanish) {
+        _id = id;
+        _created = created;
+        _modified = modified;
+        _description = description;
+        _englishName = englishName;
+        _spanishName = spanishName;
+        _scientificName = scientificName;
+        _status = status;
+        _thumbnailURL = thumbnailURL;
+        _minAltitud = minAltitud;
+        _maxAltitud = maxAltitud;
+        _size = size;
+        _descriptionYear = descriptionYear;
+        _pastScientificNames = pastScientificNames;
+        _seasonalitySpanish = seasonalitySpanish;
+        _diagnosticDescriptionSpanish = diagnosticDescriptionSpanish;
+        _relationshipsSpanish = relationshipsSpanish;
+        _distributionCostaRicaSpanish = distributionCostaRicaSpanish;
+        _distributionOutsideCostaRicaSpanish = distributionOutsideCostaRicaSpanish;
+        _nestSpanish = nestSpanish;
+        _habitasSpanish = habitasSpanish;
+        _feedingHabitsSpanish = feedingHabitsSpanish;
+        _conservationAreasDistributionSpanish = conservationAreasDistributionSpanish;
+        _behaviorSpanish = behaviorSpanish;
+        _mythsSpanish = mythsSpanish;
+        _conservationStatus = conservationStatus;
+        _authorTax = authorTax;
+        _territorySpanish = territorySpanish;
     }
 
     @Override public int describeContents() {

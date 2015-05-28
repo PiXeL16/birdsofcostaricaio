@@ -3,6 +3,9 @@ package com.greenpixels.birdsofcostarica.presenters;
 import com.greenpixels.birdsofcostarica.events.BusProvider;
 import com.greenpixels.birdsofcostarica.views.BirdsView;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.squareup.sqlbrite.SqlBrite;
+
+import javax.inject.Inject;
 
 /**
  * Presenter for the Birds Functionality
@@ -12,11 +15,11 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
  */
 public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
 
+    SqlBrite _db;
 
+    @Inject public BirdsPresenter(SqlBrite db) {
 
-    public BirdsPresenter() {
-
-
+        this._db = db;
     }
 
     public void loadBirds()

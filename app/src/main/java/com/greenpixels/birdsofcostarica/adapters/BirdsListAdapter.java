@@ -11,6 +11,8 @@ import com.hannesdorfmann.annotatedadapter.support.recyclerview.SupportAnnotated
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Bird list Adapter
  *
@@ -32,7 +34,7 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
 
     private List<Bird> _birds;
 
-    public BirdsListAdapter(Context context)
+    @Inject public BirdsListAdapter(Context context)
     {
         super(context);
     }

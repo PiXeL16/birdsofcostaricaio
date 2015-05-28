@@ -1,0 +1,17 @@
+package com.greenpixels.birdsofcostarica.inyection.scope;
+
+/**
+ * Scope to use in FragmentComponents
+ *
+ * @author PiXeL16
+ * @date 5/27/15
+ */
+import java.lang.annotation.Retention;
+
+import javax.inject.Scope;
+
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+
+@Scope @Retention(RUNTIME)
+public @interface FragmentScope {}
