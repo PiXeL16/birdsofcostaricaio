@@ -11,8 +11,6 @@ import android.content.Context;
 
 import com.greenpixels.birdsofcostarica.inyection.modules.AppModule;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
 @Component(

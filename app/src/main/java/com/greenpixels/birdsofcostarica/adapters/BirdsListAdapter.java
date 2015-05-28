@@ -54,8 +54,9 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
 
     @Override
     public void bindViewHolder(BirdsListAdapterHolders.VIEWTYPE_BIRDViewHolder vh, int position) {
+        Bird bird =  _birds.get(position);
 
-        vh.name.setText("");
+        vh.name.setText(bird.getEnglishName());
 
     }
 

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.activities.BaseActivity;
+import com.greenpixels.birdsofcostarica.fragments.BirdListFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -15,6 +16,12 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragmentContainer, new BirdListFragment())
+                    .commit();
+        }
     }
 
     @Override
@@ -46,6 +53,5 @@ public class MainActivity extends BaseActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }

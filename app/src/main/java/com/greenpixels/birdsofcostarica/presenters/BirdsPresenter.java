@@ -1,11 +1,21 @@
 package com.greenpixels.birdsofcostarica.presenters;
 
+import com.greenpixels.birdsofcostarica.db.BirdDBManager;
 import com.greenpixels.birdsofcostarica.events.BusProvider;
+import com.greenpixels.birdsofcostarica.models.Bird;
 import com.greenpixels.birdsofcostarica.views.BirdsView;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.squareup.sqlbrite.SqlBrite;
 
+import java.util.List;
+
 import javax.inject.Inject;
+
+import rx.Scheduler;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Presenter for the Birds Functionality
@@ -15,7 +25,9 @@ import javax.inject.Inject;
  */
 public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
 
-    SqlBrite _db;
+    private SqlBrite _db;
+    private Subscription _subscription;
+
 
     @Inject public BirdsPresenter(SqlBrite db) {
 
@@ -30,10 +42,18 @@ public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
             getView().showLoading(false);
         }
 
+        _subscription = _db.createQuery(BirdDBManager.TABLE, BirdDBManager.QUERY)
+                .map(BirdDBManager.MAP)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<List<Bird>>() {
+                    @Override public void call(List<Bird> birds) {
 
-        getView().setData(null);
-        getView().showContent();
+                        getView().setData(birds);
+                        getView().showContent();
 
+                    }
+                });
 
     }
 
@@ -44,7 +64,7 @@ public class BirdsPresenter extends MvpBasePresenter<BirdsView> {
 //        if (!retainInstance) {
             BusProvider.getInstance().unregister(this);
 //        }
-
+        _subscription.unsubscribe();
 
     }
 

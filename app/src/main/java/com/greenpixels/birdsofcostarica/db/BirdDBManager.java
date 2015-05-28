@@ -49,6 +49,11 @@ public class BirdDBManager {
     public static final String AUTHOR_TAX = "author_tax";
     public static final String TERRITORY_SPANISH = "territory_spanish";
 
+    public static String QUERY = ""
+            + "SELECT *"
+            + " FROM " + TABLE;
+
+
 
     public static final Func1<SqlBrite.Query, List<Bird>> MAP = new Func1<SqlBrite.Query, List<Bird>>() {
         @Override public List<Bird> call(SqlBrite.Query query) {

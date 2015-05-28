@@ -12,8 +12,6 @@ import android.support.annotation.NonNull;
 
 import com.greenpixels.birdsofcostarica.MainApp;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
