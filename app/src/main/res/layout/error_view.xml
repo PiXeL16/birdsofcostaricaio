@@ -9,10 +9,10 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_gravity="center"
-        android:drawableTop="@drawable/ic_action"
+        android:drawableTop="@drawable/ic_error_outline_black"
         android:drawablePadding="16dp"
         android:textSize="20sp"
-        android:textColor="#656565"
+        android:textColor="@color/primary_text"
 
         android:text="Error, Error"
         android:gravity="center"
