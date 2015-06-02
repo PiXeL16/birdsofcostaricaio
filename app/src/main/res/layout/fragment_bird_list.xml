@@ -33,7 +33,7 @@
             android:paddingRight="@dimen/margin_small"
             android:paddingEnd="@dimen/margin_small"
 
-            recyclerviewfastscroller:rfs_barColor="@color/divider"
+            recyclerviewfastscroller:rfs_barColor="@android:color/transparent"
             recyclerviewfastscroller:rfs_handleBackground="@color/primary_light"
 
             />

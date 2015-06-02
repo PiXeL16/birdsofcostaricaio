@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.hannesdorfmann.annotatedadapter.annotation.Field;
@@ -64,7 +65,11 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
     public void bindViewHolder(BirdsListAdapterHolders.VIEWTYPE_BIRDViewHolder vh, int position) {
         Bird bird =  _birds.get(position);
 
-        vh.thumbnail.setImageResource(R.drawable.bird_example_image);
+        Glide.with(vh.thumbnail.getContext())
+                .load(R.drawable.bird_example_image)
+                .fitCenter()
+                .into(vh.thumbnail);
+
         vh.name.setText(bird.getEnglishName());
         vh.scientific_name.setText(bird.getScientificName());
 

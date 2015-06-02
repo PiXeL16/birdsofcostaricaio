@@ -5,7 +5,7 @@
                 android:background="?android:attr/selectableItemBackground"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:paddingLeft="@dimen/list_item_padding_left_right"
-                android:paddingRight="@dimen/list_item_padding_right"
+                android:paddingRight="@dimen/list_item_padding_left_right"
                 android:paddingTop="@dimen/list_item_padding_top_bottom"
                 android:paddingBottom="@dimen/list_item_padding_top_bottom"
     >
@@ -67,15 +67,15 @@
         tools:text="Mochuelos Muchuelos"
         />
 
-    <View
-        android:id="@+id/separatorLine"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"
-        android:layout_marginTop="14dp"
+    <!--<View-->
+        <!--android:id="@+id/separatorLine"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/divider"-->
+        <!--android:layout_marginTop="14dp"-->
 
-        android:layout_below="@+id/scientific_name" android:layout_toRightOf="@+id/thumbnail"
-        android:layout_toEndOf="@+id/thumbnail"/>
+        <!--android:layout_below="@+id/scientific_name" android:layout_toRightOf="@+id/thumbnail"-->
+        <!--android:layout_toEndOf="@+id/thumbnail"/>-->
 
 
 

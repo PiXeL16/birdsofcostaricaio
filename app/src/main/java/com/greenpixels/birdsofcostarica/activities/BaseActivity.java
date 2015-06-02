@@ -56,7 +56,7 @@ public abstract class BaseActivity extends MosbyActivity {
 
     public void checkPlayServices()
     {
-        PlayServicesUtils.checkGooglePlaySevices(this);
+        //PlayServicesUtils.checkGooglePlaySevices(this);
     }
 
     @Override
