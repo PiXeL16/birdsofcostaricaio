@@ -1,21 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="48dp"
-              android:background="?android:attr/selectableItemBackground"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:paddingLeft="@dimen/list_item_padding_left_right"
+                android:paddingRight="@dimen/list_item_padding_right"
+                android:paddingTop="@dimen/list_item_padding_top_bottom"
+                android:paddingBottom="@dimen/list_item_padding_top_bottom"
     >
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:maxLines="1"
-        android:gravity="left|center_vertical"
-        android:textColor="@color/primary_text"
-        android:textSize="16sp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/thumbnail"
+        android:layout_width="@dimen/list_item_image_width_height"
+        android:layout_height="@dimen/list_item_image_width_height"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bird_example_image"
+        android:layout_marginRight="@dimen/list_item_padding_left_right"
         />
 
 
-</LinearLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/date"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textColor="@color/secondary_text"-->
+        <!--tools:text="25. Apr."-->
+        <!--/>-->
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/list_item_name_text_size"
+        android:textColor="@color/primary_text"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/thumbnail"
+
+        android:maxLines="1"
+        android:layout_marginBottom="2dp"
+        android:ellipsize="end"
+        tools:text="Blue Purple Mochuelito"
+        />
+
+
+    <TextView
+        android:id="@+id/scientific_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/secondary_text"
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Mochuelos Muchuelos"
+        />
+
+    <View
+        android:id="@+id/separatorLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="@dimen/list_item_padding_top_bottom"
+        android:layout_below="@+id/scientific_name" android:layout_toRightOf="@+id/thumbnail"
+        android:layout_toEndOf="@+id/thumbnail"/>
+
+
+
+</RelativeLayout>

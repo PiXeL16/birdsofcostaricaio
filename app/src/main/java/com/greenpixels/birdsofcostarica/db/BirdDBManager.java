@@ -64,6 +64,7 @@ public class BirdDBManager {
                     long id = DBUtil.getLong(cursor, ID);
                     String description = DBUtil.getString(cursor, DESCRIPTION);
                     String english_name = DBUtil.getString(cursor,ENGLISH_NAME);
+                    String scientific_name = DBUtil.getString(cursor,SCIENTIFIC_NAME);
 
                     //TODO: Add the rest of the fields
 
@@ -71,6 +72,7 @@ public class BirdDBManager {
                     bird.setId(id);
                     bird.setDescription(description);
                     bird.setEnglishName(english_name);
+                    bird.setScientificName(scientific_name);
 
                     values.add(bird);
                 }

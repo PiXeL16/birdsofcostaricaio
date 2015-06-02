@@ -2,16 +2,26 @@
 <resources>
     <!-- Thanks http://materialpalette.com -->
 
+
     <color name="primary">#4CAF50</color>
     <color name="primary_dark">#388E3C</color>
-    <color name="primary_medium">#9CCC65</color>
     <color name="primary_light">#C8E6C9</color>
-    <color name="accent">#8BC34A</color>
+    <color name="accent">#FFC107</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
-    <color name="divider">#B6B6B6</color>
+    <color name="divider">#DEDEDE</color>
 
     <color name="fastScrollBarHandleColor">#727272</color>
+
+    <!-- main color for drawable-v21/my_ripple -->
+    <color name="primary_highlight">#C8E6C9</color>
+    <!-- main color for drawable/my_ripple -->
+    <color name="primary_highlight_press">#388E3C</color>
+    <color name="primary_highlight_focus">#C8E6C9</color>
+
+
+    <color name="background">#FFFFFF</color>
+    <color name="menu_text_color">#FFFFFF</color>
 
 </resources>

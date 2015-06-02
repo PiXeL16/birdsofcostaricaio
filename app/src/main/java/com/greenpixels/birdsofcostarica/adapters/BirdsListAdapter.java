@@ -1,6 +1,7 @@
 package com.greenpixels.birdsofcostarica.adapters;
 
 import android.content.Context;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.greenpixels.birdsofcostarica.R;
@@ -25,9 +26,16 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
     @ViewType(
             layout = R.layout.list_bird_item,
             fields = {
+                    @Field(id = R.id.thumbnail,
+                            name = "thumbnail",
+                            type = ImageView.class),
                     @Field(
                             id = R.id.name,
                             name = "name",
+                            type = TextView.class),
+                    @Field(
+                            id = R.id.scientific_name,
+                            name = "scientific_name",
                             type = TextView.class)
             }) public final int VIEWTYPE_BIRD = 0;
 
@@ -56,7 +64,9 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
     public void bindViewHolder(BirdsListAdapterHolders.VIEWTYPE_BIRDViewHolder vh, int position) {
         Bird bird =  _birds.get(position);
 
+        vh.thumbnail.setImageResource(R.drawable.bird_example_image);
         vh.name.setText(bird.getEnglishName());
+        vh.scientific_name.setText(bird.getScientificName());
 
     }
 
