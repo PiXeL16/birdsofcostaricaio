@@ -1,11 +1,14 @@
 package com.greenpixels.birdsofcostarica.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.greenpixels.birdsofcostarica.R;
+import com.greenpixels.birdsofcostarica.activities.BirdDetailActivity;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.hannesdorfmann.annotatedadapter.annotation.Field;
 import com.hannesdorfmann.annotatedadapter.annotation.ViewType;
@@ -72,6 +75,19 @@ public class BirdsListAdapter extends SupportAnnotatedAdapter implements BirdsLi
 
         vh.name.setText(bird.getEnglishName());
         vh.scientific_name.setText(bird.getScientificName());
+
+        vh.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Context context = view.getContext();
+                Intent intent = new Intent(context, BirdDetailActivity.class);
+               // intent.putExtra(CheeseDetailActivity.EXTRA_NAME, holder.mBoundString);
+
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 

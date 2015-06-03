@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica.inyection.modules;
+package com.greenpixels.birdsofcostarica.injection.modules;
 
 /**
  * Main app Module for Inyection
@@ -7,6 +7,7 @@ package com.greenpixels.birdsofcostarica.inyection.modules;
  * @date 5/27/15
  */
 
+import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -19,13 +20,13 @@ import dagger.Provides;
 public class AppModule {
 
     @NonNull
-    private final MainApp application;
+    private final Application application;
 
-    public AppModule(@NonNull MainApp app) {
+    public AppModule(@NonNull Application app) {
         this.application = app;
     }
 
-    @Provides  Context provideContext() {
+    @Provides Application provideApplication() {
         return application;
     }
 }

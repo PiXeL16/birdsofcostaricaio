@@ -10,13 +10,14 @@ import android.widget.LinearLayout;
 import com.greenpixels.birdsofcostarica.MainApp;
 import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.adapters.BirdsListAdapter;
-import com.greenpixels.birdsofcostarica.inyection.components.AppComponent;
-import com.greenpixels.birdsofcostarica.inyection.components.BirdListFragmentComponent;
-import com.greenpixels.birdsofcostarica.inyection.components.DaggerBirdListFragmentComponent;
-import com.greenpixels.birdsofcostarica.inyection.modules.DBModule;
+import com.greenpixels.birdsofcostarica.injection.components.AppComponent;
+import com.greenpixels.birdsofcostarica.injection.components.BirdListFragmentComponent;
+import com.greenpixels.birdsofcostarica.injection.components.DaggerBirdListFragmentComponent;
+import com.greenpixels.birdsofcostarica.injection.modules.ActivityModule;
+import com.greenpixels.birdsofcostarica.injection.modules.DBModule;
 import com.greenpixels.birdsofcostarica.models.Bird;
-import com.greenpixels.birdsofcostarica.presenters.BirdsPresenter;
-import com.greenpixels.birdsofcostarica.views.BirdsView;
+import com.greenpixels.birdsofcostarica.presenters.BirdsListPresenter;
+import com.greenpixels.birdsofcostarica.views.BirdsListView;
 import com.hannesdorfmann.mosby.mvp.lce.MvpLceFragment;
 
 import java.util.List;
@@ -30,7 +31,7 @@ import xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScrol
  * @author PiXeL16
  * @date 5/26/15
  */
-public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,BirdsView,BirdsPresenter> implements BirdsView {
+public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,BirdsListView,BirdsListPresenter> implements BirdsListView {
 
 
     @InjectView(R.id.recyclerView) RecyclerView _recyclerView;
@@ -48,6 +49,7 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
                 .builder()
                 .appComponent(appComponent)
                 .dBModule(new DBModule())
+                .activityModule(new ActivityModule(this.getActivity()))
                 .build();
 
         birdListFragmentComponent.inject(this);
@@ -80,7 +82,7 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
     }
 
     @Override
-    public BirdsPresenter createPresenter() {
+    public BirdsListPresenter createPresenter() {
        return birdListFragmentComponent.presenter();
     }
 

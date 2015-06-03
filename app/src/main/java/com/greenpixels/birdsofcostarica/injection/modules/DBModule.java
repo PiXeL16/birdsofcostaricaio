@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica.inyection.modules;
+package com.greenpixels.birdsofcostarica.injection.modules;
 
 /**
  * DB Module for inyection
@@ -12,7 +12,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.greenpixels.birdsofcostarica.BuildConfig;
-import com.greenpixels.birdsofcostarica.MainApp;
 import com.greenpixels.birdsofcostarica.db.DBOpenHelper;
 import com.squareup.sqlbrite.SqlBrite;
 
@@ -27,8 +26,8 @@ import timber.log.Timber;
 public class DBModule {
 
     @Provides @NonNull @Singleton
-    DBOpenHelper provideOpenHelper(Context context) {
-        return new DBOpenHelper(context);
+    DBOpenHelper provideOpenHelper(Application application) {
+        return new DBOpenHelper(application);
     }
 
     @Provides @NonNull @Singleton SqlBrite provideSqlBrite(DBOpenHelper openHelper) {

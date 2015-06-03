@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica.inyection.components;
+package com.greenpixels.birdsofcostarica.injection.components;
 
 /**
  * Main app component
@@ -7,9 +7,10 @@ package com.greenpixels.birdsofcostarica.inyection.components;
  * @date 5/27/15
  */
 
+import android.app.Application;
 import android.content.Context;
 
-import com.greenpixels.birdsofcostarica.inyection.modules.AppModule;
+import com.greenpixels.birdsofcostarica.injection.modules.AppModule;
 
 import dagger.Component;
 
@@ -18,6 +19,6 @@ import dagger.Component;
 )
 public interface AppComponent {
 
-   Context context();
+   Application application();
 
 }

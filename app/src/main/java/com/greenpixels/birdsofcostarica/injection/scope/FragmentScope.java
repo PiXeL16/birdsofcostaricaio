@@ -1,4 +1,4 @@
-package com.greenpixels.birdsofcostarica.inyection.scope;
+package com.greenpixels.birdsofcostarica.injection.scope;
 
 /**
  * Scope to use in FragmentComponents

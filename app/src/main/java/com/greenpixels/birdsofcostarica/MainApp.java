@@ -6,9 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
-import com.greenpixels.birdsofcostarica.inyection.components.AppComponent;
-import com.greenpixels.birdsofcostarica.inyection.components.DaggerAppComponent;
-import com.greenpixels.birdsofcostarica.inyection.modules.AppModule;
+import com.greenpixels.birdsofcostarica.injection.components.AppComponent;
+import com.greenpixels.birdsofcostarica.injection.components.DaggerAppComponent;
+import com.greenpixels.birdsofcostarica.injection.modules.AppModule;
 import com.greenpixels.birdsofcostarica.utils.ForegroundUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
