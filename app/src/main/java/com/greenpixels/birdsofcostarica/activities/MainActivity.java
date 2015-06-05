@@ -1,6 +1,7 @@
 package com.greenpixels.birdsofcostarica.activities;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -8,14 +9,20 @@ import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.activities.BaseActivity;
 import com.greenpixels.birdsofcostarica.fragments.BirdListFragment;
 
+import butterknife.InjectView;
+
 
 public class MainActivity extends BaseActivity {
 
+
+    @InjectView(R.id.toolbar) Toolbar _toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setSupportActionBar(_toolbar);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

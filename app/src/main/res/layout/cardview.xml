@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/names_content"
+        android:layout_width="match_parent"
+
+        android:layout_marginLeft="@dimen/card_margin"
+        android:layout_marginRight="@dimen/card_margin"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/spanish_english_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="17sp"
+            android:lines="1"
+            android:text="Lechuzita Serranera "
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>/
+
+            <TextView
+                android:id="@+id/family"
+
+                android:textSize="12sp"
+
+                android:lines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Owls and Parrots"
+
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/spanish_english_name"
+                android:layout_alignParentEnd="true"/>
+
+
+        <TextView
+            android:id="@+id/scientific_name"
+            android:layout_width="wrap_content"
+
+
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            android:lines="1"
+            android:text="(Mochuelos mochuelitos)"
+            android:layout_below="@+id/spanish_english_name" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/card_margin"
+        android:weightSum="3"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        />
+        <LinearLayout
+            android:id="@+id/status_container"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:orientation="vertical" android:layout_gravity="left">
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/primary"
+                tools:text="R"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/status"
+                android:textColor="@color/secondary_text"
+
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/size_container"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_gravity="right">
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/primary"
+                tools:text="3000m-1000m"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/altitude"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_horizontal"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/altitud_container"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_gravity="right">
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/primary"
+                tools:text="38cm"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/size"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_horizontal"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_margin"
+        android:layout_marginLeft="@dimen/card_margin"
+        app:cardElevation="3dp"
+        android:layout_marginRight="@dimen/card_margin">
+
+        <LinearLayout
+            style="@style/Widget.CardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary"
+                android:text="Related"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Tesasdf asdf asdfasd f asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf as dfas dfa sdf asdf asdf asdf asdf as dfas df asdf asdf asdf asdf asdf asdf as dfas fdas dfa sdf asdf asdf asd f" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            style="@style/Widget.GeneralCardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separatorLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:background="@color/divider"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

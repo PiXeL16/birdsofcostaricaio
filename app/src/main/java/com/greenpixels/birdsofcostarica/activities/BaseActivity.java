@@ -19,9 +19,6 @@ import com.hannesdorfmann.mosby.MosbyActivity;
  */
 public abstract class BaseActivity extends MosbyActivity {
 
-    @Nullable
-    private Toolbar _toolbar;
-
 
     public BaseActivity()
     {
@@ -37,22 +34,10 @@ public abstract class BaseActivity extends MosbyActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        setupToolbar();
-    }
 
-    protected void setupToolbar() {
-        _toolbar = getView(R.id.toolbar);
-
-        if (_toolbar != null) {
-            setSupportActionBar(_toolbar);
-        }
     }
 
 
-    @Nullable
-    protected Toolbar getToolbar() {
-        return _toolbar;
-    }
 
     public void checkPlayServices()
     {

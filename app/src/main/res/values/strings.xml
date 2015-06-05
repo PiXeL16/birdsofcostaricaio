@@ -5,4 +5,23 @@
     <string name="accept">Ok</string>
     <string name="general_error_message">An unknown error has occurred</string>
 
+
+    <string name="general_title">General</string>
+    <string name="status">status</string>
+    <string name="altitude">altitude</string>
+    <string name="size">size</string>
+
+    <string name="description">Description</string>
+    <string name="seasonality">Seasonality</string>
+    <string name="behavior">Behavior</string>
+    <string name="distribution_in_costarica">Distribution in Costa Rica</string>
+    <string name="distribution_outside_costarica">Distribution outside Costa Rica</string>
+    <string name="nest">Nest</string>
+    <string name="habitat">Habitat</string>
+    <string name="feeding_habits">Feeding Habits</string>
+    <string name="conservation_area_distribution">Distribution in conservation areas</string>
+    <string name="conservation_status">Conservation status</string>
+    <string name="territory">Territory</string>
+    <string name="myths">Myths</string>
+
 </resources>
