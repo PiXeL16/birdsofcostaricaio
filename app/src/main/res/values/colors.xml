@@ -2,10 +2,10 @@
 <resources>
     <!-- Thanks http://materialpalette.com -->
 
-
-    <color name="primary">#4CAF50</color>
-    <color name="primary_dark">#388E3C</color>
+    <color name="primary">#8BC34A</color>
+    <color name="primary_dark">#689F38</color>
     <color name="primary_light">#C8E6C9</color>
+    <color name="primary_translucent">#998BC34A</color>
     <color name="accent">#FFC107</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#ff969696</color>
@@ -17,7 +17,7 @@
     <!-- main color for drawable-v21/my_ripple -->
     <color name="primary_highlight">#C8E6C9</color>
     <!-- main color for drawable/my_ripple -->
-    <color name="primary_highlight_press">#388E3C</color>
+    <color name="primary_highlight_press">#689F38</color>
     <color name="primary_highlight_focus">#C8E6C9</color>
 
 

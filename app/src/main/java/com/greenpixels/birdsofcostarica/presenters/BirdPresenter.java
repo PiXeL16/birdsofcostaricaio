@@ -1,20 +1,16 @@
 package com.greenpixels.birdsofcostarica.presenters;
 
-import com.greenpixels.birdsofcostarica.db.BirdDBManager;
-import com.greenpixels.birdsofcostarica.events.BusProvider;
-import com.greenpixels.birdsofcostarica.models.Bird;
+import android.app.usage.UsageEvents;
+
+import com.greenpixels.birdsofcostarica.event.TestEvent;
 import com.greenpixels.birdsofcostarica.views.BirdView;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.squareup.sqlbrite.SqlBrite;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
+import de.greenrobot.event.EventBus;
 import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 /**
  * Bird Activity Presenter
@@ -26,10 +22,11 @@ public class BirdPresenter extends MvpBasePresenter<BirdView> {
 
     private SqlBrite _db;
     private Subscription _subscription;
+    protected EventBus _eventBus;
 
     @Inject
-    public BirdPresenter(SqlBrite db) {
-
+    public BirdPresenter(SqlBrite db, EventBus eventBus) {
+        _eventBus = eventBus;
         this._db = db;
     }
 
@@ -62,7 +59,7 @@ public class BirdPresenter extends MvpBasePresenter<BirdView> {
     public void detachView(boolean retainInstance) {
         super.detachView(retainInstance);
 
-        BusProvider.getInstance().unregister(this);
+        _eventBus.unregister(this);
 
         if(_subscription != null)
         _subscription.unsubscribe();
@@ -73,7 +70,13 @@ public class BirdPresenter extends MvpBasePresenter<BirdView> {
     @Override
     public void attachView(BirdView view) {
         super.attachView(view);
-        BusProvider.getInstance().register(this);
+
+        _eventBus.register(this);
+    }
+
+    public void onEventMainThread(TestEvent event) {
+//        if (isViewAttached()) {
+//        }
     }
 
 

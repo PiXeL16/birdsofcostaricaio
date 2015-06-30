@@ -6,6 +6,7 @@ import com.greenpixels.birdsofcostarica.injection.scope.Activity;
 
 import dagger.Module;
 import dagger.Provides;
+import rx.android.internal.Preconditions;
 
 /**
  * Module to provide context of activities
@@ -14,13 +15,13 @@ import dagger.Provides;
  * @date 6/3/15
  */
 @Module
-public class ActivityModule {
+public class ContextProvider {
 
     private final Context _context;
 
-    public ActivityModule(Context context) {
+    public ContextProvider(Context context) {
 
-        this._context = context;
+        this._context = Preconditions.checkNotNull(context, "context cannot be null");;
     }
 
     @Provides

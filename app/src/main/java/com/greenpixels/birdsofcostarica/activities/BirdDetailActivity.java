@@ -14,8 +14,9 @@ import com.greenpixels.birdsofcostarica.R;
 import com.greenpixels.birdsofcostarica.injection.components.AppComponent;
 import com.greenpixels.birdsofcostarica.injection.components.BirdDetailActivityComponent;
 import com.greenpixels.birdsofcostarica.injection.components.DaggerBirdDetailActivityComponent;
-import com.greenpixels.birdsofcostarica.injection.modules.ActivityModule;
-import com.greenpixels.birdsofcostarica.injection.modules.DBModule;
+import com.greenpixels.birdsofcostarica.injection.modules.ContextProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.DBProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.UtilProvider;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.greenpixels.birdsofcostarica.presenters.BirdPresenter;
 import com.greenpixels.birdsofcostarica.views.BirdView;
@@ -47,8 +48,9 @@ public class BirdDetailActivity extends MvpLceActivity <CoordinatorLayout,Bird,B
         _component = DaggerBirdDetailActivityComponent
                 .builder()
                 .appComponent(appComponent)
-                .activityModule(new ActivityModule(this))
-                .dBModule(new DBModule())
+                .contextProvider(new ContextProvider(this))
+                .dBProvider(new DBProvider())
+                .utilProvider(new UtilProvider())
                 .build();
 
         _component.inject(this);

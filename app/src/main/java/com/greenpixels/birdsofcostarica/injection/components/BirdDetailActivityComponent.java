@@ -1,8 +1,9 @@
 package com.greenpixels.birdsofcostarica.injection.components;
 
 import com.greenpixels.birdsofcostarica.activities.BirdDetailActivity;
-import com.greenpixels.birdsofcostarica.injection.modules.ActivityModule;
-import com.greenpixels.birdsofcostarica.injection.modules.DBModule;
+import com.greenpixels.birdsofcostarica.injection.modules.ContextProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.DBProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.UtilProvider;
 import com.greenpixels.birdsofcostarica.presenters.BirdPresenter;
 
 import javax.inject.Singleton;
@@ -18,7 +19,7 @@ import dagger.Component;
 @Singleton
 @Component(
         dependencies = AppComponent.class,
-        modules = {ActivityModule.class,DBModule.class}
+        modules = {ContextProvider.class,DBProvider.class, UtilProvider.class}
 )
 public interface BirdDetailActivityComponent {
 

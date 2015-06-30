@@ -13,8 +13,9 @@ import com.greenpixels.birdsofcostarica.adapters.BirdsListAdapter;
 import com.greenpixels.birdsofcostarica.injection.components.AppComponent;
 import com.greenpixels.birdsofcostarica.injection.components.BirdListFragmentComponent;
 import com.greenpixels.birdsofcostarica.injection.components.DaggerBirdListFragmentComponent;
-import com.greenpixels.birdsofcostarica.injection.modules.ActivityModule;
-import com.greenpixels.birdsofcostarica.injection.modules.DBModule;
+import com.greenpixels.birdsofcostarica.injection.modules.ContextProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.DBProvider;
+import com.greenpixels.birdsofcostarica.injection.modules.UtilProvider;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.greenpixels.birdsofcostarica.presenters.BirdsListPresenter;
 import com.greenpixels.birdsofcostarica.views.BirdsListView;
@@ -48,8 +49,9 @@ public class BirdListFragment extends MvpLceFragment<LinearLayout,List<Bird>,Bir
         birdListFragmentComponent = DaggerBirdListFragmentComponent
                 .builder()
                 .appComponent(appComponent)
-                .dBModule(new DBModule())
-                .activityModule(new ActivityModule(this.getActivity()))
+                .contextProvider(new ContextProvider(this.getActivity()))
+                .dBProvider(new DBProvider())
+                .utilProvider(new UtilProvider())
                 .build();
 
         birdListFragmentComponent.inject(this);

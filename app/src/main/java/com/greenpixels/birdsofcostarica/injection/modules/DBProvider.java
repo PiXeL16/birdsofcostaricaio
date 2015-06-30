@@ -8,7 +8,6 @@ package com.greenpixels.birdsofcostarica.injection.modules;
  */
 
 import android.app.Application;
-import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.greenpixels.birdsofcostarica.BuildConfig;
@@ -21,9 +20,8 @@ import dagger.Module;
 import dagger.Provides;
 import timber.log.Timber;
 
-@Module(
-)
-public class DBModule {
+@Module
+public class DBProvider {
 
     @Provides @NonNull @Singleton
     DBOpenHelper provideOpenHelper(Application application) {
