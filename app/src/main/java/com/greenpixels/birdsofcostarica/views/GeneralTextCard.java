@@ -31,6 +31,9 @@ public class GeneralTextCard extends FrameLayout {
         if(!TextUtils.isEmpty(_cardTitle))
         {
             _titleTextView.setText(_cardTitle);
+
+            invalidate();
+            requestLayout();
         }
     }
 
@@ -44,6 +47,9 @@ public class GeneralTextCard extends FrameLayout {
         if(!TextUtils.isEmpty(_cardBody))
         {
             _bodyTextView.setText(_cardBody);
+
+            invalidate();
+            requestLayout();
         }
     }
 
