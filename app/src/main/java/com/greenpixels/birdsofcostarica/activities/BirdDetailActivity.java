@@ -8,6 +8,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 import com.greenpixels.birdsofcostarica.MainApp;
 import com.greenpixels.birdsofcostarica.R;
@@ -19,8 +20,12 @@ import com.greenpixels.birdsofcostarica.injection.modules.DBProvider;
 import com.greenpixels.birdsofcostarica.injection.modules.UtilProvider;
 import com.greenpixels.birdsofcostarica.models.Bird;
 import com.greenpixels.birdsofcostarica.presenters.BirdPresenter;
+import com.greenpixels.birdsofcostarica.utils.StringFetcher;
+import com.greenpixels.birdsofcostarica.views.GeneralTextCard;
 import com.greenpixels.birdsofcostarica.views.BirdView;
 import com.hannesdorfmann.mosby.mvp.lce.MvpLceActivity;
+
+import javax.inject.Inject;
 
 import butterknife.InjectView;
 
@@ -32,12 +37,12 @@ import butterknife.InjectView;
  */
 public class BirdDetailActivity extends MvpLceActivity <CoordinatorLayout,Bird,BirdView,BirdPresenter> implements BirdView {
 
-
-
     @InjectView(R.id.toolbar) Toolbar _toolbar;
     @InjectView(R.id.collapsing_toolbar) CollapsingToolbarLayout _collapsingToolbar;
-//
-//    CountriesAdapter adapter;
+    @InjectView(R.id.cards_container) LinearLayout _cardContainer;
+
+    @Inject
+    StringFetcher _stringFetcher;
 
     BirdDetailActivityComponent _component;
 
@@ -54,6 +59,7 @@ public class BirdDetailActivity extends MvpLceActivity <CoordinatorLayout,Bird,B
                 .build();
 
         _component.inject(this);
+
 
     }
 
@@ -72,13 +78,27 @@ public class BirdDetailActivity extends MvpLceActivity <CoordinatorLayout,Bird,B
             window.setStatusBarColor(Color.TRANSPARENT);
         }
 
-        _collapsingToolbar.setTitle("test");
-
-
+        _collapsingToolbar.setTitle(_stringFetcher.getString(R.string.app_name));
 
 
         loadData(false);
+
+        addCards();
     }
+
+    private void addCards()
+    {
+
+        for(int i=0;i<5;i++)
+        {
+            GeneralTextCard card = new GeneralTextCard(this);
+            card.setCardBody("tasdfa sdf asdf asdf asdf asd fasdf ");
+            card.setCardTitle("This is a test");
+            _cardContainer.addView(card);
+        }
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
